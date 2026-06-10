@@ -53,7 +53,7 @@ public class Program
           string[] lineParts = line.Split(' ', 2);
 
           if (lineParts[0]=="port") port = lineParts[1];
-          else if (lineParts[0]=="badPathFile") badPathFile = lineParts[1];
+          else if (lineParts[0]=="badPath") badPathFile = lineParts[1];
           else if (lineParts[0]=="redirects")
           {
             string[] values = lineParts[1].Split('"');

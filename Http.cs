@@ -133,7 +133,7 @@ public class HttpServer
   {
     byte[] body = HandlerRead(path);
     
-    if (body!=new byte[0])
+    if (body.Length != 0)
     {
       List<string> headers = new List<string>();
       headers.Add($"Content-Length: {body.Length}");
@@ -156,6 +156,7 @@ public class HttpServer
   private static byte[] HandlerInvalid(string error)
   {
     byte[] body = new byte[0];
+    Program.Log("ERROR", Program.badPathFile);
     if (error=="404 Not Found") body = HandlerRead(Program.badPathFile);
     
     List<string> headers = new List<string>();
